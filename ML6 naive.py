@@ -6,8 +6,8 @@ Created on Thu Aug 16 20:19:08 2018
 """
 
 import csv
-import random
 import math
+import secrets
  
 def loadcsv(filename):
 	lines = csv.reader(open(filename, "r"));
@@ -25,7 +25,7 @@ def splitdataset(dataset, splitratio):
 	copy = list(dataset);    
 	while len(trainset) < trainsize:
 #generate indices for the dataset list randomly to pick ele for training data
-		index = random.randrange(len(copy));       
+		index = secrets.SystemRandom().randrange(len(copy));       
 		trainset.append(copy.pop(index))    
 	return [trainset, copy]
  
