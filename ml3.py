@@ -49,7 +49,7 @@ def entropy(S):
     
     counts=[0,0]
     for i in range(2):
-        counts[i]=sum([1 for x in S if attr[i]==x])/(len(S)*1.0)
+        counts[i]=sum(1 for x in S if attr[i]==x)/(len(S)*1.0)
     
     sums=0
     for cnt in counts:
